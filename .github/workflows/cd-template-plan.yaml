@@ -63,6 +63,12 @@ jobs:
           -input=false \
           ${{ inputs.terraform_action == 'destroy' && '-destroy' || '' }}
 
+      - name: Publish tfplan artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tfplan
+          path: ./tfplan
+          
       - name: Create Module Artifact
         run: |
           $stagingDirectory = "staging"

@@ -35,10 +35,10 @@ jobs:
       AZAPI_RETRY_GET_AFTER_PUT_MAX_TIME: "60m" # Accounts for eventually consistent management group permissions propagation
 
     steps:
-      - name: Download a Build Artifact
+      - name: Download tfplan
         uses: actions/download-artifact@v4
         with:
-          name: module
+          name: tfplan
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
